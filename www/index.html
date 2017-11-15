@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+	<title>E-Zoo</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	
+	<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Include jQuery Mobile stylesheets -->
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<!-- Include the jQuery library -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<!-- Include the jQuery Mobile library -->
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="script.js"></script>
+	
+</head>
+ 
+<body onload="sortList()">
+<script>window.onload = checkOnline()</script>
+
+	<div data-role="page" id="welcomepage">
+		<div data-role="header" data-tap-toggle="false">
+			<h1>E-Zoo</h1>
+			<h2>A Tour to the Zoo</h2>
+		</div>
+		
+		<div data-role="main" class="ui-content">
+			<img src="image/zoo.jpg" alt="zoo-welcome-picture" width=100% height=100%>
+			
+			<div data-role="controlgroup" data-type="vertical">
+			  <a href="#pageone" class="ui-btn ui-corner-all ui-icon-arrow-r ui-btn-icon-right">Off To The Zoo!</a>
+			  <!--<a href="#myPopup" data-rel="popup" class="ui-btn ui-corner-all">Learn Farm Animals Names and Sounds</a>-->
+			  <button class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-right"onclick="videoOpen()">Learn Farm Animals Names and Sounds</button>
+			</div>
+		</div>
+
+		
+		<div data-role="footer" data-position="fixed">
+			<h1>Copyright&copy;  2017   YH & SC.</h1>
+		</div>
+	</div> <!-- end of #welcomepage -->
+
+	<div data-role="page" id="pageone">
+		<div data-role="header">
+			<h1>What We Have</h1>
+		</div>
+
+		<div role="main" class="ui-content">
+			<a href="#welcomepage" class="ui-btn ui-icon-home ui-btn-icon-left ui-corner-all" data-transition="slide" data-direction="reverse" >Home</a>
+			
+			<div class="example-wrapper">
+			<form class="ui-filterable">
+			<input id="myFilter" data-type="search" placeholder="Search for names..">
+			</form>
+			
+				<ul data-sort="true" data-role="listview" id="zoo-list" data-filter="true" data-input="#myFilter" data-inset="true" data-autodividers="true"></ul>
+			</div>
+		</div>
+		
+		
+		<div data-role="footer">
+			<h1><h1>Copyright&copy;  2017   YH & SC.</h1></h1>
+		</div>
+		
+		
+	</div>
+	 <!-- end of #pageone -->
+	<div data-role="page" id="pagetwo">
+		<div data-role="header"> 
+			<h1>Info</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-field-contain">
+			<p data-role="listview" id="zoo-data" data-theme="a" data-inset="true"></p>
+			</div>
+			
+			<a href="#pageone" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all" data-transition="slide" data-direction="reverse" >Back to list</a>
+		</div>
+		
+		<div data-role="footer">
+			<h1><h1>Copyright&copy;  2017   YH & SC.</h1></h1>
+		</div>
+	</div> <!-- end of #pagetwo -->
+	
+	<div data-role="page" id="pageNoCon">
+		<div data-role="content">
+			<p>No internet connection. Please check your network.</p>
+		</div>
+		
+		
+	</div> <!-- end of #pageNoCon -->
+</body>
+
+</html> 
